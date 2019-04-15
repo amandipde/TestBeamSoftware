@@ -43,8 +43,20 @@ class NtupleMerger {
 
     void filltrigTrackmap();
     void eventLoop();
+  
     void endJob();
+    std::vector<tbeam::cluster>  offlineclusterizer(const std::vector<tbeam::hit>& hits, const unsigned int nCbc,
+                          const unsigned int nChanPercbc, std::vector<tbeam::cluster>& clusVec);
+    void stubSimulator (const std::vector<tbeam::cluster>& seeding, const std::vector<tbeam::cluster>& matching, std::vector<tbeam::stub>& stubVec);
+
+   tbeam::Event ev_;
+ 
+
   private :
+
+     //variable to create event structure tree
+    TTree* tree_;
+
     TFile* dutF_;
     TFile* telF_;
     TTree *dutchain_; 
@@ -59,6 +71,10 @@ class NtupleMerger {
 
     //input format
     TelescopeEvent* telEvent_;
+     //tbeam::Track* telEvent_;
+
+
+
     tbeam::Event* dutEvent_;
 
 
@@ -85,5 +101,15 @@ class NtupleMerger {
     bool  debug_;
     bool  telOnly_;
     */
+/*
+ public:
+    tbeam::hit *_hit0 (0, 0, 0, 0, false);
+    tbeam::hit *_hit1 (0, 0, 0, 0, false);
+    tbeam::stub *_stub (0, 0, 0.);
+    tbeam::cluster *_cls (0, 0, 0, 0, 0, 0);
+*/
+
+
+
 };
 #endif

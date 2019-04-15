@@ -1,7 +1,7 @@
 =======
 ## Beam Test Data Analysis 
-##Merging Code: Takes Ntuple from EDM, Telescope and merges into one Analysis Tree for user
-The code fill the Track vector inside the EDM ntuple
+##Merging Code: Takes DUT Ntuple with flat Tree structure and Telescope Ntuple with Event Class structure and merges into one Analysis Tree for user
+The code fill the Track vector inside the  ntuple
 ## Installation
 
 Set up ROOT(works with ROOT 6)
